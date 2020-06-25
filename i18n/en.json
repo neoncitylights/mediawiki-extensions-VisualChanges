@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sam Nguyen"
+		]
+	},
+	"visualchanges-desc": "A MediaWiki extension that redesigns the way users can read lists of changes"
+}

@@ -1,0 +1,33 @@
+{
+	"name": "VisualChanges",
+	"version": "1.0.0",
+	"author": [
+		"Sam Nguyen"
+	],
+	"license-name": "MIT",
+	"url": "https://www.mediawiki.org/wiki/Extension:VisualChanges",
+	"descriptionmsg": "visualchanges-desc",
+	"type": "parserhook",
+	"requires": {
+		"MediaWiki": ">= 1.34.0",
+		"platform": {
+			"php": ">= 7.4"
+		}
+	},
+	"MessagesDirs": {
+		"VisualChanges": [
+			"i18n"
+		]
+	},
+	"AutoloadNamespaces": {
+		"VisualChanges\\": "src/"
+	},
+	"Hooks": {
+		"PageHistoryLineEnding": "VisualChanges\\Hooks::onPageHistoryLineEnding"
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "VisualChanges"
+	},
+	"manifest_version": 2
+}
