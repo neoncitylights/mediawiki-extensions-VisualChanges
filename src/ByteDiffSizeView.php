@@ -18,17 +18,21 @@ class ByteDiffSizeView {
 	}
 
 	public function getClass( ByteDiffSize $byteDiffSize ) : string {
-		return "mw-visualchanges-byte-diff-size " . $byteDiffSize->getType();
+		$class = "mw-visualchanges-byte-diff-size";
+		$class .= " {$byteDiffSize->getType()}";
+		$class .= $byteDiffSize->isAboveThreshold() ? " heavy--edit" : '';
+
+		return $class;
 	}
 
 	public function getText( ByteDiffSize $byteDiffSize ) : string {
-		$output = '';
+		$text = '';
 		if ( $byteDiffSize->matchesType( ByteDiffSize::POSITIVE ) ) {
-			$output .= '+';
+			$text .= '+';
 		}
 
-		$output .= $byteDiffSize->getDiffSize();
+		$text .= $byteDiffSize->getDiffSize();
 
-		return $output;
+		return $text;
 	}
 }

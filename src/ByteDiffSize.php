@@ -57,6 +57,6 @@ class ByteDiffSize {
 	}
 
 	public function isAboveThreshold() : bool {
-		return $this->getDiffSize() > $this->sizeThreshold;
+		return abs( $this->getDiffSize() ) > abs( $this->sizeThreshold );
 	}
 }

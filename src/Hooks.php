@@ -51,9 +51,11 @@ class Hooks {
 		$classes[] = "mw-visualchanges-rev";
 
 		$line = '';
+		$line .= '<span class="mw-visualchanges-main-data">';
 		$line .= "<span class=\"mw-visualchanges-summary$noSummary\">" . $currentSummary . '</span>';
 		$line .= '<span class="mw-visualchanges-user">' . $currentUser . '</span>';
 		// $line .= '<span class="mw-visualchanges-byte_size">' . $currentSize . '</span>';
+		$line .= '</span>';
 		$line .= $diffSizeView->getView( $diffSize );
 	}
 }

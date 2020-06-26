@@ -26,6 +26,11 @@
 	}
 }
 
+.mw-visualchanges-main-data {
+	display: inline-block;
+	width: 50%;
+}
+
 .mw-visualchanges-user {
 	color: #0645ad;
 	display: block;
@@ -47,15 +52,26 @@
 	font-family: monospace;
 	font-weight: bold;
 	padding: .5em 1em;
+	float: right;
 
 	&.positive {
 		background: #ebf2ff;
 		color: #36c;
+
+		&.heavy--edit {
+			background: #36c;
+			color: #fff;
+		}
 	}
 
 	&.negative {
 		background: #fee7e6;
 		color: #d33;
+
+		&.heavy--edit {
+			background: #d33;
+			color: #fff;
+		}
 	}
 
 	&.neutral {
