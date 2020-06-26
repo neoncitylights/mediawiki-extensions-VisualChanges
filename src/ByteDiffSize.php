@@ -52,7 +52,7 @@ class ByteDiffSize {
 		return $this->type;
 	}
 
-	public function matchesType( string $type ) : bool {
+	public function isType( string $type ) : bool {
 		return $this->getType() === $type;
 	}
 

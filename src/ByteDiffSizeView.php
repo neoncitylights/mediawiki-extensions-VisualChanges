@@ -27,7 +27,7 @@ class ByteDiffSizeView {
 
 	public function getText( ByteDiffSize $byteDiffSize ) : string {
 		$text = '';
-		if ( $byteDiffSize->matchesType( ByteDiffSize::POSITIVE ) ) {
+		if ( $byteDiffSize->isType( ByteDiffSize::POSITIVE ) ) {
 			$text .= '+';
 		}
 
