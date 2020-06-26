@@ -16,11 +16,15 @@
 	border-bottom: 0;
 	padding: .5em !important;
 
-	&:first-child {
+	&:first-child:not(:only-child) {
 		border-radius: 2px 2px 0 0;
 	}
 
-	&:last-child {
+	&:only-child {
+		border-radius: 2px;
+	}
+
+	&:last-child:not(:only-child) {
 		border-radius: 0 0 2px 2px;
 		border-bottom: 1px solid #a2a9b1;
 	}
