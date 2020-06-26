@@ -20,7 +20,7 @@ class ByteDiffSizeView {
 	public function getClass( ByteDiffSize $byteDiffSize ) : string {
 		$class = "mw-visualchanges-byte-diff-size";
 		$class .= " {$byteDiffSize->getType()}";
-		$class .= $byteDiffSize->isAboveThreshold() ? " heavy--edit" : '';
+		$class .= $byteDiffSize->isLarge() ? " large--edit" : '';
 
 		return $class;
 	}
