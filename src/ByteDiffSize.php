@@ -9,15 +9,20 @@ class ByteDiffSize {
 
 	private int $currentByteSize;
 	private int $previousByteSize;
+	private int $sizeThreshold;
 	private ?int $diffSize;
-	private string $type;
+	private ?string $type;
 
 	public function __construct(
 		int $currentByteSize,
-		int $previousByteSize
+		int $previousByteSize,
+		int $sizeThreshold
 	) {
 		$this->currentByteSize = $currentByteSize;
 		$this->previousByteSize = $previousByteSize;
+		$this->sizeThreshold = $sizeThreshold;
+		$this->diffSize = null;
+		$this->type = null;
 	}
 
 	public function getDiffSize() : int {
@@ -34,10 +39,10 @@ class ByteDiffSize {
 			return $this->type;
 		}
 
-		if ( $this->diffSize > 0 ) {
+		if ( $this->getDiffSize() > 0 ) {
 			$this->type = self::POSITIVE;
 		}
-		else if ( $this->diffSize === 0 ) {
+		else if ( $this->getDiffSize() === 0 ) {
 			$this->type = self::NEUTRAL;
 		}
 		else {
@@ -49,5 +54,9 @@ class ByteDiffSize {
 
 	public function matchesType( string $type ) : bool {
 		return $this->type === $type;
+	}
+
+	public function isAboveThreshold() : bool {
+		return $this->getDiffSize() > $this->sizeThreshold;
 	}
 }

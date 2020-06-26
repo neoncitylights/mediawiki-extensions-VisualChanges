@@ -22,12 +22,20 @@
 	"AutoloadNamespaces": {
 		"VisualChanges\\": "src/"
 	},
+	"ServiceWiringFiles": [
+		"src/ServiceWiring.php"
+	],
 	"Hooks": {
 		"PageHistoryLineEnding": "VisualChanges\\Hooks::onPageHistoryLineEnding"
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "VisualChanges"
+	},
+	"ResourceModules": {
+		"ext.visualChanges.styles": {
+			"styles": "modules/ext.visualChanges.less"
+		}
 	},
 	"manifest_version": 2
 }

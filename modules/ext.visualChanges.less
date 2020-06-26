@@ -1,0 +1,65 @@
+// First, reset styles
+#pagehistory {
+	list-style: none;
+	margin: .25em;
+}
+
+// parent selector '.mw-body-content' is prefixed to this selector
+// to override the CSS specificity of the selector '#pagehistory li'
+.mw-body-content #pagehistory li {
+	margin-bottom: unset;
+}
+
+// Now re-apply styles
+.mw-visualchanges-rev {
+	border: 1px solid #a2a9b1;
+	border-bottom: 0;
+	padding: .5em !important;
+
+	&:first-child {
+		border-radius: 2px 2px 0 0;
+	}
+
+	&:last-child {
+		border-radius: 0 0 2px 2px;
+		border-bottom: 1px solid #a2a9b1;
+	}
+}
+
+.mw-visualchanges-user {
+	color: #0645ad;
+	display: block;
+}
+
+.mw-visualchanges-summary {
+	display: block;
+	color: #222;
+	font-size: 14px;
+
+	&.summary--none {
+		color: #72777d;
+		font-style: italic;
+	}
+}
+
+.mw-visualchanges-byte-diff-size {
+	border-radius: 2px;
+	font-family: monospace;
+	font-weight: bold;
+	padding: .5em 1em;
+
+	&.positive {
+		background: #ebf2ff;
+		color: #36c;
+	}
+
+	&.negative {
+		background: #fee7e6;
+		color: #d33;
+	}
+
+	&.neutral {
+		background: #c8ccd1;
+		color: #222;
+	}
+}
