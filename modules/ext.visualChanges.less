@@ -17,6 +17,7 @@
 	padding: .5em !important;
 	display: flex;
 	align-items: center;
+	flex-direction: row;
 	justify-content: space-between;
 
 	&:first-child:not(:only-child) {
@@ -56,10 +57,25 @@
 	}
 }
 
+.mw-visualchanges-byte-data {
+	display: flex;
+}
+
+.mw-visualchanges-byte-size {
+	color: #222;
+	border-radius: 2px;
+	font-family: monospace;
+	font-weight: bold;
+	text-align: center;
+	padding: .5em 1em;
+	margin: 0 .5em 0 0;
+}
+
 .mw-visualchanges-byte-diff-size {
 	border-radius: 2px;
 	font-family: monospace;
 	font-weight: bold;
+	text-align: center;
 	padding: .5em 1em;
 
 	&.positive {

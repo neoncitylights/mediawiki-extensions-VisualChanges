@@ -37,25 +37,29 @@ class Hooks {
 			$noSummary = ' summary--none';
 		}
 
-		// Get revision difference size
+		// Get byte size and byte difference size
+		$currentSize = $currentRevision->getSize();
+		$currentSizeView = new ByteSizeView( $history );
 		$diffSizeFactory = $vcServices->getByteDiffSizeFactory();
 		$diffSizeView = new ByteDiffSizeView();
 		$diffSize = $diffSizeFactory->newFromRevisions( $currentRevision, $previousRevision );
 
 		// load styles
-		$output->addModuleStyles( [
-			'ext.visualChanges.styles'
-		] );
+		$output->addModuleStyles( 'ext.visualChanges.styles' );
 
 		// now actually re-setup the HTML of each revision line
 		$classes[] = "mw-visualchanges-rev";
 
 		$line = '';
+
 		$line .= '<span class="mw-visualchanges-main-data">';
 		$line .= "<span class=\"mw-visualchanges-summary$noSummary\">" . $currentSummary . '</span>';
 		$line .= '<span class="mw-visualchanges-user">' . $currentUser . '</span>';
-		// $line .= '<span class="mw-visualchanges-byte_size">' . $currentSize . '</span>';
 		$line .= '</span>';
+
+		$line .= '<span class="mw-visualchanges-byte-data">';
+		$line .= $currentSizeView->getView( $currentSize );
 		$line .= $diffSizeView->getView( $diffSize );
+		$line .= '</span>';
 	}
 }

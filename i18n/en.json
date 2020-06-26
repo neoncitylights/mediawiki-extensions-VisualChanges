@@ -5,5 +5,6 @@
 		]
 	},
 	"visualchanges-desc": "A MediaWiki extension that redesigns the way users can read lists of changes",
-	"visualchanges-no-summary": "No summary was given for this revision"
+	"visualchanges-no-summary": "No summary was given for this revision",
+	"visualchanges-byte-size": "$1 B"
 }
